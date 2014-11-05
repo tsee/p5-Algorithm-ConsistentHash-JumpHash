@@ -38,7 +38,7 @@
 \.swo$
 
 
-ConsistentHash::JumpHash\.(?:bs|c|o)$
+JumpHash\.(?:bs|c|o)$
 \.o$
 t\.pl$
 

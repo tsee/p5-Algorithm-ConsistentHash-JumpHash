@@ -51,8 +51,6 @@
 
 /* SipHash-2-4 */
 
-const unsigned char * const seed = "asl5jdAh1Gk21,l.";
-
 PERL_STATIC_INLINE uint64_t
 siphash_2_4_from_perl(const unsigned char *in, const STRLEN inlen)
 {
@@ -63,8 +61,8 @@ siphash_2_4_from_perl(const unsigned char *in, const STRLEN inlen)
   uint64_t v3 = (uint64_t)(0x7465646279746573);
 
   uint64_t b;
-  uint64_t k0 = ((uint64_t*)seed)[0];
-  uint64_t k1 = ((uint64_t*)seed)[1];
+  uint64_t k0 = 0;
+  uint64_t k1 = 0;
   uint64_t m;
   const int left = inlen & 7;
   const U8 *end = in + inlen - left;

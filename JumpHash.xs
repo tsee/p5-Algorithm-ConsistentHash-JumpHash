@@ -4,7 +4,7 @@
 #include "XSUB.h"
 
 #include "ppport.h"
-
+#include "fix_inline.h"
 #include <stdlib.h>
 #include <sys/types.h>
 

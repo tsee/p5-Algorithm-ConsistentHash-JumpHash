@@ -1,4 +1,5 @@
 Changes
+fix_inline.h
 JumpHash.xs
 lib/Algorithm/ConsistentHash/JumpHash.pm
 Makefile.PL

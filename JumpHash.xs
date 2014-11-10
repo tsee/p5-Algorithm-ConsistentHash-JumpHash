@@ -23,6 +23,7 @@
  */
 
 /* Find best way to ROTL32/ROTL64 */
+#ifndef ROTL64
 #if defined(_MSC_VER)
   #include <stdlib.h>  /* Microsoft put _rotl declaration in here */
   #define ROTL64(x,r)  _rotl64(x,r)
@@ -30,7 +31,9 @@
   /* gcc recognises this code and generates a rotate instruction for CPUs with one */
   #define ROTL64(x,r)  (((uint64_t)x << r) | ((uint64_t)x >> (64 - r)))
 #endif
+#endif
 
+#ifndef U8TO64_LE
 #define U8TO64_LE(p) \
   (((uint64_t)((p)[0])      ) | \
    ((uint64_t)((p)[1]) <<  8) | \
@@ -40,6 +43,7 @@
    ((uint64_t)((p)[5]) << 40) | \
    ((uint64_t)((p)[6]) << 48) | \
    ((uint64_t)((p)[7]) << 56))
+#endif
 
 #define SIPROUND            \
   do {              \

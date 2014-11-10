@@ -10,3 +10,5 @@ pm_to_blib
 JumpHash.bs
 JumpHash.c
 MYMETA.*
+*.tar
+*.tar.gz
